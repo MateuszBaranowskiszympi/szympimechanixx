@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Prosty formularz kontaktowy — Studio Nova">
+    <title>Kontakt — Studio Nova</title>
+    <link rel="stylesheet" href="styleb.css">
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            
+                <img src="logoszymp.jpg" alt="Logo Studio Nova">
+            </a>
+            <nav aria-label="Główne menu">
+                <a href="index.html">Strona główna</a>
+                <a href="ofertab.html">Oferta</a>
+                <a href="portfoliob.html">Portfolio</a>
+                <a href="kontaktb.html">Kontakt</a>
+            </nav>
+        </header>
+
+        <main class="grid" id="kontakt" aria-labelledby="kontakt-heading">
+            <section class="card" aria-labelledby="kontakt-heading">
+                <h1 id="kontakt-heading">Skontaktuj się z nami</h1>
+                <p style="color:var(--muted);margin-top:6px">Masz pytanie? Napisz krótką wiadomość — odpowiemy w ciągu 24 godzin.</p>
+
+                <form id="contactForm" class="contact-form" action="#" method="post" novalidate>
+                    <div class="row">
+                        <label for="name">Imię i nazwisko</label>
+                        <input id="name" name="name" type="text" required placeholder="Anna Nowak">
+                    </div>
+
+                    <div class="row">
+                        <label for="email">E‑mail</label>
+                        <input id="email" name="email" type="email" required placeholder="twoj@adres.pl">
+                    </div>
+
+                    <div class="row">
+                        <label for="phone">Telefon (opcjonalnie)</label>
+                        <input id="phone" name="phone" type="tel" placeholder="+48 600 700 800">
+                    </div>
+
+                    <div class="row">
+                        <label for="subject">Temat</label>
+                        <input id="subject" name="subject" type="text" required placeholder="Krótki opis">
+                    </div>
+
+                    <div class="row">
+                        <label for="message">Wiadomość</label>
+                        <textarea id="message" name="message" required placeholder="Opisz swoją sprawę..."></textarea>
+                    </div>
+
+                    <div class="row consent">
+                        <input id="consent" name="consent" type="checkbox" required>
+                        <label for="consent">Wyrażam zgodę na przetwarzanie danych osobowych w celu udzielenia odpowiedzi (RODO).</label>
+                    </div>
+
+                    <div class="row actions">
+                        <button type="submit">Wyślij wiadomość</button>
+                        <button type="reset" class="secondary">Wyczyść</button>
+                    </div>
+
+                    <div id="notice" class="notice" role="status" aria-live="polite">Wiadomość wysłana. Dziękujemy!</div>
+                </form>
+            </section>
+
+            <aside class="card contact-info" aria-label="Dane kontaktowe">
+                <h2 style="margin-top:0">Dane kontaktowe</h2>
+                <p>Telefon: <a href="tel:+48546742893">+48 546 742 893</a></p>
+                <p>E‑mail: <a href="mailto:kontakt@studionova.pl">kontakt@szympmechanix.pl</a></p>
+                <p>Adres: ul. Nowa 106, 97-310 Jarosty</p>
+
+                <h3 style="margin-top:12px">Godziny pracy</h3>
+                <p style="color:var(--muted)">Pn–Pt: 9:00–17:00</p>
+
+                <p style="margin-top:12px;color:var(--muted);font-size:.95rem">
+                    Możesz też zostawić wiadomość bezpośrednio przez formularz — odpowiadamy w ciągu 1 dnia roboczego.
+                </p>
+            </aside>
+        </main>
+
+        <div class="foot">
+            <small>© 2025 Studio Nova — Wszystkie prawa zastrzeżone.</small>
+        </div>
+    </div>
+
+    <script>
+        // prosta obsługa formularza w trybie demo (nie wysyła danych — tylko pokazuje komunikat)
+        (function(){
+            const form = document.getElementById('contactForm');
+            const notice = document.getElementById('notice');
+
+            form.addEventListener('submit', function(e){
+                e.preventDefault();
+                // podstawowa walidacja HTML5 już działa; pokaż komunikat i zresetuj formę
+                notice.style.display = 'block';
+                form.reset();
+                setTimeout(()=> notice.style.display = 'none', 6000);
+            });
+        })();
+    </script>
+</body>
+</html></div>
